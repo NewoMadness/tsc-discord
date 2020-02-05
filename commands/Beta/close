@@ -1,0 +1,13 @@
+exports.run = (bot, message, args) => { 
+if(message.channel.name == message.channel.id) {
+message.channel.delete()
+bot.channels.get("632389626639679501").send(`${message.author.username} has closed the ticket. Great job guys!`);
+}
+else {
+message.channel.send(':x: Please use this command in the ticket\'s channel.')
+}
+}
+module.exports = {
+  name: "close",
+  usage: 'Closes the ticket \(Must be in the ticket\'s channel\)'
+}

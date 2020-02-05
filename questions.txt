@@ -1,0 +1,81 @@
+/*bot.on('message', async message => {
+                      if(message.channel.id !== channel.id) return;
+                      if (message.content.startsWith(';deny')) {
+                        message.channel.send('Alright, what is your first reason to deny their application?')
+                        const filter1 = message => message.content.includes(message.content);
+                      const collector1 = message.channel.createMessageCollector(filter1);
+                        collector1.on('collect', message => {
+                          const r = [message.content];
+                          message.channel.send('Alright, what is your second reason to deny their application?')
+                        })
+                          const filter2 = message => message.content.includes(message.content);
+                      const collector2 = message.channel.createMessageCollector(filter2);
+                        collector2.on('collect', (message, r) => {
+                        r.push(message.content)
+                          message.channel.send('Alright, what is your third reason to deny their application?')
+                        })
+                          const filter3 = message => message.content.includes(message.content);
+                      const collector3 = message.channel.createMessageCollector(filter3);
+                        collector3.on('collect', (message, r) => {
+                        r.push(message.content);
+                          message.channel.send('Sending message to user of their denied application...')
+                          let denied = new RichEmbed()
+                          .setTitle('Your Staff Application has been Denied.')
+                          .setDescription(`We are sorry to inform you that your staff application has been denied due to:
+- ${r[0]}.
+- ${r[1]}.
+- ${r[2]}.
+Feel free to re-apply in a week.
+
+The Study Corner
+Server Management Team Member - ${message.author.username}`);
+                          user.send(denied)
+                        })
+                      }
+                   })*/
+“You can’t find a movie to watch, what do you do?” 
+
+1) go to bed, you were too tired to watch a movie anyways.
+
+2) keep searching only to realize you misspelled it
+
+3) stream it because that’s definitely not illegal
+
+3) go read a book, it’s better for relaxing.
+
+
+
+“How do you eat your cereal?”
+
+1) cereal then milk
+
+2) milk then cereal
+
+3) cereal with no milk
+
+4) milk with no cereal
+
+
+
+Your dog fell asleep on your feet but you want to get up, what do you do?”
+
+1) get up, a dog can’t prevent you from doing what you want
+
+2) leave him there because according to pupper’s law you can’t wake him up
+
+3) try to slowly move him without waking him up.
+
+4) take pictures and send them on social media because he’s so #cute when he’s sleeping
+
+
+
+
+“You fell down and scraped your knee, what do you do?” 
+
+1) call for mommy, her kisses always seemed to have magical healing powers
+
+2) stay and take deep breaths in and out, as if that was going to help
+
+3) get up and keep walking, ‘tis but a scratch
+
+4) stay there and contemplate how you got there so you can improve

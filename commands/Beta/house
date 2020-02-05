@@ -1,0 +1,244 @@
+const fs = require('fs')
+const Discord = require('discord.js')
+const db = require('quick.db')
+const prompter = require('discordjs-prompter');
+const rm = require('discord.js-reaction-menu');
+module.exports = {
+  name: 'house',
+  category: 'Beta',
+  description: 'Assigns a user to a house, use ;houses for more info',
+  aliases: [],
+  run: async (bot, message, args, ops) => {
+
+// let houseused = await db.fetch(`commandUsed_${message.author.id}`);
+//if (houseused > 0) return message.channel.send('Sorry, but you\'ve already used this command! DM or ping Newo if you feel something is wrong!')
+  
+  let foot = "Please Remember that the reaction order may vary."
+  
+  const ep = bot.emojis.find(emoji => emoji.name === "ep")
+  const ic = bot.emojis.find(emoji => emoji.name === "ic")
+  
+  //EMBEDS
+  let first = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setDescription("You've discovered TSC houses! \nChoose your own destiny, or let fate decide for you. \n\nClick 🙏 to take the quiz. \nClick 😬 to let destiny decide.")
+    .setFooter(foot)
+  
+  let second = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setDescription("Welcome! You have chosen to take the quiz. There are four houses: \n\nMonikiee: House of Compassion and Brilliance \n\nNatsukian: House of Bravery and Loyalty \n\n Yuria: House of Sophistication and Beauty\n\n Sayoriean: House of Friendliness and Uniqueness\n\nYou will shortly be assigned to one of these houses to take part in events, tournaments and other exciting activities.")
+    .setFooter(foot)
+  
+  let third = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setDescription("If you could choose 1 super power, which would it be? \n🧡 Invisibility \n💙 Flying \n💚 Super Strength \n💛 Mind Reading")
+    .setFooter(foot)
+  
+  let fourth = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setDescription("You can't find the movie you want to watch. What do you do? \n\n🧡 Go to bed, you were too tired to watch a movie anyways. \n\n💙 Keep searching only to realize you misspelled it. \n\n💚 Stream it, because that's definitely not illegal. \n\n💛 Go read a book, it's better for relaxing.")
+    .setFooter(foot)
+  
+  let fifth = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setDescription("How do you eat your cereal? \n\n🧡 Cereal, then milk. \n\n💙 Milk, then cereal. \n\n💚 Cereal with no milk. \n\n💛 Milk with no cereal.")
+    .setFooter(foot)
+  
+  let sixth = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setDescription("Your dog fell asleep on your feet but you want to get up, what do you do? \n\n🧡 Get up, a dog can't prevent you from doing what you want. \n\n💙 Leave him there because according to pupper's law you cant't wake him/her up. \n\n💚 Try to slowly move him/her without waking him/her up. \n\n💛 Take pictures and send them on social media, because he/her is so #cute when he/her's sleeping")
+    .setFooter(foot)
+  
+ let seventh = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setDescription("You fell down and scraped your knee, what do you do? \n\n🧡 call for mommy, her kisses always seemed to have magical healing powers. \n\n💙 stay and take deep breaths in and out, as if that was going to help. \n\n💚 get up and keep walking, ‘tis but a scratch. \n\n💛 stay there and contemplate how you got there so you can improve.")
+    .setFooter(foot)
+  
+  
+  //MESSAGE & CODES
+ 
+  message.channel.send(first) 
+  .then(sentEmbed => {
+    sentEmbed.react("🙏")
+    sentEmbed.react("😬")
+    
+    const collector = sentEmbed.createReactionCollector((reaction, user) => 
+    user.id === message.author.id &&
+    reaction.emoji.name === "🙏" ||
+    reaction.emoji.name === "😬"
+
+);
+    collector.once("collect", async (reaction, user) => {
+if (reaction.users.id == message.author.id) {
+  return console.log('please work')
+    const chosen = reaction.emoji.name;
+    if(reaction.emoji.name === "🙏"){
+    
+    
+    const response2 = await prompter.choice(message.channel, {
+    question: second,
+    choices: '✅',
+    userId: message.author.id
+  });
+    
+    
+    const response3 = await prompter.choice(message.channel, {
+    question: third,
+    choices: ['🧡', '💙', '💚', '💛'],
+    userId: message.author.id
+  }); 
+    if (response3 === '🧡') {
+db.add(`house1${message.author.id}`, 1)
+} else if (response3 === '💙') {
+db.add(`house2${message.author.id}`, 1)
+} else if (response3 === '💚') {
+db.add(`house3${message.author.id}`, 1)
+} else if (response3 === '💛') {
+db.add(`house4${message.author.id}`, 1)
+}
+    
+    const response4 = await prompter.choice(message.channel, {
+    question: fourth,
+    choices: ['🧡', '💙', '💚', '💛'],
+    userId: message.author.id
+  }); 
+    if (response4 === '🧡') {
+db.add(`house4${message.author.id}`, 1)
+} else if (response4 === '💙') {
+db.add(`house3${message.author.id}`, 1)
+} else if (response4 === '💚') {
+db.add(`house1${message.author.id}`, 1)
+} else if (response4 === '💛') {
+db.add(`house2${message.author.id}`, 1)
+}
+    
+    
+    const response5 = await prompter.choice(message.channel, {
+    question: fifth,
+    choices: ['🧡', '💙', '💚', '💛'],
+    userId: message.author.id
+  }); 
+    if (response5 === '🧡') {
+db.add(`house3${message.author.id}`, 1)
+} else if (response5 === '💙') {
+db.add(`house2${message.author.id}`, 1)
+} else if (response5 === '💚') {
+db.add(`house4${message.author.id}`, 1)
+} else if (response5 === '💛') {
+db.add(`house1${message.author.id}`, 1)
+}
+    
+    const response6 = await prompter.choice(message.channel, {
+    question: sixth,
+    choices: ['🧡', '💙', '💚', '💛'],
+    userId: message.author.id
+  }); 
+    if (response6 === '🧡') {
+db.add(`house1${message.author.id}`, 1)
+} else if (response6 === '💙') {
+db.add(`house3${message.author.id}`, 1)
+} else if (response6 === '💚') {
+db.add(`house2${message.author.id}`, 1)
+} else if (response6 === '💛') {
+db.add(`house4${message.author.id}`, 1)
+}
+    
+    const response7 = await prompter.choice(message.channel, {
+    question: seventh,
+    choices: ['🧡', '💙', '💚', '💛'],
+    userId: message.author.id
+  }); 
+    if (response7 === '🧡') {
+db.add(`house4${message.author.id}`, 1)
+} else if (response7 === '💙') {
+db.add(`house2${message.author.id}`, 1)
+} else if (response7 === '💚') {
+db.add(`house3${message.author.id}`, 1)
+} else if (response7 === '💛') {
+db.add(`house1${message.author.id}`, 1)
+}
+    
+    const house1 = await db.fetch(`house1${message.author.id}`);  
+    if (house1 = null) {
+      db.add(`house1${message.author.id}`, 1)
+    }
+    const house2 = await db.fetch(`house2${message.author.id}`);
+    if (house2 = null) {
+      db.add(`house2${message.author.id}`, 1)
+    }
+    const house3 = await db.fetch(`house3${message.author.id}`);
+    if (house1 = null) {
+      db.add(`house1${message.author.id}`, 1)
+    const house4 = await db.fetch(`house4${message.author.id}`);
+    message.channel.send('You finished the quiz! Collecting results. May take some time...');
+    if (house1 > house2 && house1 > house3 && house1 > house4) {
+          message.channel.send('Congrats! You were chosen to be in the House of Monikiee!')
+          var house1role = message.guild.roles.find(role => role.name === "House of Monikiee");
+message.channel.addRole(house1role);
+        return  db.add(`commandUsed_${message.author.id}`, 1);
+    }
+  const house11 = await db.fetch(`house1${message.author.id}`);  
+    const house22 = await db.fetch(`house2${message.author.id}`);
+    const house33 = await db.fetch(`house3${message.author.id}`);
+    const house44 = await db.fetch(`house4${message.author.id}`);
+  if (house22 > house11 && house22 > house33 && house22 > house44) {
+          message.channel.send('Congrats! You were chosen to be in the House of Natsukian')
+          var house2role = message.guild.roles.find(role => role.name === "House of Natsukian");
+message.channel.addRole(house2role);
+       return   db.add(`commandUsed${message.author.id}`, 1);
+    
+    } else if (house33 > house11 && house33 > house22 && house33 > house44) {
+          message.channel.send('Congrats! You were chosen to be in the House of Yuria!')
+var house3role = message.guild.roles.find(role => role.name === "House of Yuria");
+message.channel.addRole(house3role);
+          return db.add(`commandUsed${message.author.id}`, 1);
+      
+    } else if (house44 > house11 && house44 > house22 && house44 > house33) {
+          message.channel.send('Congrats! You were chosen to be in the House of Sayoriean!')
+          var house4role = message.guild.roles.find(role => role.name === "House of Sayoriean");
+message.channel.addRole(house4role);
+        return  db.add(`commandUsed${message.author.id}`, 1);
+    } else {
+      let houses1 = ['House of Sayoriean', 'House of Yuria', 'House of Natsukian', 'House of Monikiee']
+var randomhouse1 = houses1[Math.floor(Math.random()*houses1.length)];
+  message.channel.send(`Congrats! You were chosen to be in the ${randomhouse1}`)
+  if (randomhouse1 === 'House of Sayoriean'){
+    var Sayoriean1 = message.guild.roles.find(role => role.name === "House of Sayoriean");
+return message.channel.addRole(Sayoriean1);
+  } else if (randomhouse1 === 'House of Yuria'){
+    var Yuria1 = message.guild.roles.find(role => role.name === "House of Yuria");
+return message.channel.addRole(Yuria1);
+  }else if (randomhouse1 === 'House of Natsukian'){
+    var Natsukian1 = message.guild.roles.find(role => role.name === "House of Natsukian");
+return message.channel.addRole(Natsukian1);
+  }else if (randomhouse1 === 'House of Monikiee'){
+    var Monikiee1 = message.guild.roles.find(role => role.name === "House of Monikiee");
+return message.channel.addRole(Monikiee1);
+  }
+}
+  }
+    }else if (chosen === '😬') {
+  db.add(`commandUsed_${message.author.id}`, 1);
+  let houses = ['House of Sayoriean', 'House of Yuria', 'House of Natsukian', 'House of Monikiee']
+var randomhouse = houses[Math.floor(Math.random()*houses.length)];
+  message.channel.send(`Congrats! You were chosen to be in the ${randomhouse}!`)
+  if (randomhouse === 'House of Sayoriean'){
+    var Sayoriean = message.guild.roles.find(role => role.name === "House of Sayoriean");
+message.channel.addRole(Sayoriean);
+  } else if (randomhouse === 'House of Yuria'){
+    var Yuria = message.guild.roles.find(role => role.name === "House of Yuria");
+message.channel.addRole(Yuria);
+  }else if (randomhouse === 'House of Natsukian'){
+    var Natsukian = message.guild.roles.find(role => role.name === "House of Natsukian");
+message.channel.addRole(Natsukian);
+  }else if (randomhouse === 'House of Monikiee'){
+    var Monikiee = message.guild.roles.find(role => role.name === "House of Monikiee");
+message.channel.addRole(Monikiee);
+  }
+}
+      else return;
+    }
+    })
+})
+  }
+}

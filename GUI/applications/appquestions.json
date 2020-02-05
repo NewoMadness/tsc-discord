@@ -1,0 +1,192 @@
+{
+  "Developer": [
+    {
+    "q1": "How old are you?"
+    },
+    {
+    "q2": "What Timezone are you in?"
+    },
+    {
+    "q3": "Why do you want to be a Developer here?"
+    },
+    {
+    "q4": "Do you know Javascript at all?"
+    },
+    {
+    "q5": "If yes please correct this va di = `hello`"
+    },
+    {
+    "q6": "How would you describe yourself?"
+    },
+    {
+    "q7": "How much javascript experience do you have? How much discord.js experience?"
+    }
+  ],
+  "Tutor": [
+    {
+    "q1": "How old are you?"
+    },
+    {
+    "q2": "What Timezone are you in?"
+    },
+    {
+    "q3": "Why do you want to be a Tutor at The Study Corner?"
+    },
+    {
+    "q4": "Do you have any experience in Tutoring?"
+    },
+    {
+    "q5": "If Yes: Please Elaborate?"
+    },
+    {
+    "q6": "Why should we choose you over other applicants?"
+    },
+    {
+    "q7": "How would you describe yourself?"
+    },
+    {
+    "q8": "What subject(s) do you wish to be a Tutor in?"
+    },
+    {
+    "q9": "Do you have the required knowledge to be a Tutor in these fields?"
+    },
+    {
+    "q10": "*We'd just like to know a few things about yourself before you go -* \nWhat is/was your favourite subject in school?"
+    },
+    {
+    "q11": "Do you have a favourite activity (game, sport, music etc)?"
+    },
+    {
+    "q12": "Do you have any pets? If so what are they and what are their names?"
+    },
+    {
+    "q13": "Can you give us 3 fun facts about yourself?"
+    }
+  ],
+  "Advisor": [
+    {
+    "q1": "How old are you?"
+    },
+    {
+    "q2": "What Timezone are you in?"
+    },
+    {
+    "q3": "Why do you want to be an Advisor at The Study Corner?"
+    },
+    {
+    "q4": "Do you have any experience in giving mental health/career advice?"
+    },
+    {
+    "q5": "If Yes: Please Elaborate?"
+    },
+    {
+    "q6": "Why should we choose you over other applicants?"
+    },
+    {
+    "q7": "How would you describe yourself?"
+    },
+    {
+    "q8": "Career Advisor or Mental Health Assistant?"
+    },
+    {
+    "q9": "Do you have the required knowledge to be an advisor in these fields?"
+    },
+    {
+    "q10": "*We'd just like to know a few things about yourself before you go -* \nWhat is/was your favourite subject in school?"
+    },
+    {
+    "q11": "Do you have a favourite activity (game, sport, music etc)?"
+    },
+    {
+    "q12": "Do you have any pets? If so what are they and what are their names?"
+    },
+    {
+    "q13": "Can you give us 3 fun facts about yourself?"
+    }
+  ],
+  "Event": [
+    {
+    "q1": "How old are you?"
+    },
+    {
+    "q2": "What Timezone are you in?"
+    },
+    {
+    "q3": "Why do you want to be Event Staff at The Study Corner?"
+    },
+    {
+    "q4": "Do you have any experience in hosting events?"
+    },
+    {
+    "q5": "If Yes: Please Elaborate?"
+    },
+    {
+    "q6": "Why should we choose you over other applicants?"
+    },
+    {
+    "q7": "How would you describe yourself?"
+    },
+    {
+    "q8": "List 3 events you would like to see here at TSC"
+    },
+    {
+    "q9": "*We'd just like to know a few things about yourself before you go -*\n What is/was your favourite subject in school?"
+    },
+    {
+    "q10": "Do you have a favourite activity (game, sport, music etc)?"
+    },
+    {
+    "q11": "Do you have any pets? If so what are they and what are their names?"
+    },
+    {
+    "q12": "Can you give us 3 fun facts about yourself?"
+    }
+  ],
+  "Mod": [
+    {
+    "q1": "How old are you?"
+    },
+    {
+    "q2": "What Timezone are you in?"
+    },
+    {
+    "q3": "Why do you want to be staff at The Study Corner?"
+    },
+    {
+    "q4": "Do you have any experience in Moderation?"
+    },
+    {
+    "q5": "If Yes: Please Elaborate?"
+    },
+    {
+    "q6": "Why should we choose you over other applicants?"
+    },
+    {
+    "q7": "How would you describe yourself?"
+    },
+    {
+    "q8": "__**Situation  Questions**__ \nA user has joined the server and is asking for help with their English Homework, there are no English Tutors online and they are getting frustrated - How would you deal with this situation?"
+    },
+    {
+    "q9": "A user has been DM Advertising - How could you deal with this situation?"
+    },
+    {
+    "q10": "You're a Trial Mod (few permissions and new to the team). You see a Mod being biased with punishments. They severely punish people they dislike and ignore the fact their friends are being rude to others. How do you deal with this situation?"
+    },
+    {
+    "q11": "You are a Moderator and you get a DM from someone who has been banned, asking for you to unban them, what do you do in this situation, where should you direct them to for help?"
+    },
+    {
+    "q12": "*We'd just like to know a few things about yourself before you go -* \nWhat is/was your favourite subject in school?"
+    },
+    {
+    "q13": "Do you have a favourite activity (game, sport, music etc)?"
+    },
+    {
+    "q14": "Do you have any pets? If so what are they and what are their names?"
+    },
+    {
+    "q15": "Can you give us 3 fun facts about yourself?"
+    }
+  ]
+}

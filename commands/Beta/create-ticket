@@ -1,0 +1,54 @@
+const Discord = require("discord.js");
+exports.run = async (bot, message, args) => {
+  message.guild.createChannel(`${message.author.id}`, "test").then(channel => {
+  //  let category = message.guild.channels.find(c => c.name == "🎟〉Tickets" && c.type == "category");
+
+    //if (!category) throw new Error("Category channel does not exist");
+   // channel.setParent(category.id);
+   channel.setName(channel.id, "test");
+    let roles = message.guild.roles; // collection
+
+    // find specific role - enter name of a role you create here
+    let testRole = roles.find('name', 'Using a ticket!');
+
+    // overwrites 'SEND_MESSAGES' role, only on this specific channel
+    channel.overwritePermissions(
+        message.author.id,
+        { 'READ_MESSAGE_HISTORY': true,
+        'SEND_MESSAGES': true,
+         'VIEW_CHANNEL': true }
+    )
+    let staffrole = roles.find('name', '『✚』 Support 『✚』');
+
+    // overwrites 'SEND_MESSAGES' role, only on this specific channel
+    channel.overwritePermissions(
+        staffrole,
+        { 'READ_MESSAGE_HISTORY': true,
+        'SEND_MESSAGES': true,
+         'VIEW_CHANNEL': true }
+    )
+    let everyone = roles.find('name', '@everyone');
+    // overwrites 'SEND_MESSAGES' role, only on this specific channel
+    channel.overwritePermissions(
+        everyone,
+        { 'READ_MESSAGE_HISTORY': false,
+        'SEND_MESSAGES': false,
+         'VIEW_CHANNEL': false }
+        
+    )
+    // handle responses / errors
+    .catch(console.log);
+    channel.send(
+      "Alright! Here's your ticket. please wait as I contact staff members. This ticket can be closed by you or staff, using the command \`;close\`."
+    );
+    bot.channels
+      .get("641137853790814208")
+      .send(
+        `<&630180905280995340> ${message.author.username} has created a ticket. Please help them.`
+      );
+  });
+};
+module.exports = {
+  name: "create-ticket",
+  usage: 'Creates a new ticket to get in contact with staff'
+}
